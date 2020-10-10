@@ -13,6 +13,7 @@ import LoadingScreen from "./screens/LoadingScreen";
 import ChatScreen from "./screens/ChatScreen";
 import ProfileScreen from "./screens/ProfileScreen";
 import LogoutScreen from "./screens/LogoutScreen";
+import OrdersScreen from "./screens/OrdersScreen";
 
 import * as firebase from "firebase";
 

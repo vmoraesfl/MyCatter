@@ -9,13 +9,7 @@ import * as firebase from "firebase";
 export default function HomeScreen({ navigation }) {
   return (
     <View style={{ flex: 1, alignItems: "center", justifyContent: "center" }}>
-      <TextView
-        style={{ marginLeft: 20, alignSelf: "flex-start" }}
-        h5
-        color="#000"
-      >
-        Meus Produtos
-      </TextView>
+      <Text>Lista de Pedidos</Text>
       <Button style={styles.chat} onPress={() => navigation.navigate("Chat")}>
         <Block>
           <Block direction="row">

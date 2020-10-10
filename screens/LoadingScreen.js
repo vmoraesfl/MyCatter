@@ -26,20 +26,9 @@ export default class LoadingScreen extends React.Component {
         logoImage={require("../assets/loading_mycat.jpg")}
         isLoaded={false}
         backgroundColor={"white"}
-        logoHeight={200}
-        logoWidht={200}
-      >
-        <View style={{ flex: 1, backgroundColor: "#e6d4ff" }}></View>
-      </AnimatedSplash>
+        logoHeight={300}
+        logoWidht={300}
+      ></AnimatedSplash>
     );
   }
 }
-
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: "#fff",
-    alignItems: "center",
-    justifyContent: "center",
-  },
-});

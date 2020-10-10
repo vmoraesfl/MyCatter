@@ -38,7 +38,7 @@ export default function BottomNavBar({ name }) {
           <Button onPress={() => navigation.navigate("Employee")}>
             <Image
               style={styleComponentEmployee}
-              source={require("../assets/images/group.png")}
+              source={require("../assets/group.png")}
             ></Image>
             <TextView style={styleComponentEmployeeText} size={11}>
               Entregadores
@@ -50,7 +50,7 @@ export default function BottomNavBar({ name }) {
           <Button onPress={() => navigation.navigate("Orders")}>
             <Image
               style={styleComponentOrders}
-              source={require("../assets/images/order.png")}
+              source={require("../assets/order.png")}
             ></Image>
             <TextView style={styleComponentOrdersText} size={12}>
               Pedidos
