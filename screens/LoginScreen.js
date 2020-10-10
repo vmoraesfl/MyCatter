@@ -33,7 +33,7 @@ export default class LogingScreen extends React.Component {
 
   handleLoginOwner = () => {
     const { email, password } = this.state;
-    alert("passou");
+
     firebase
       .auth()
       .signInWithEmailAndPassword(email, password)
@@ -78,7 +78,7 @@ export default class LogingScreen extends React.Component {
             </Block>
 
             <Block>
-              <Block style={{ marginTop: 50 }}>
+              <Block style={{ marginTop: -50 }}>
                 <TextView size={20} style={{ fontWeight: "600" }} color="gray">
                   Endereço de Email
                 </TextView>
@@ -100,7 +100,7 @@ export default class LogingScreen extends React.Component {
                 </Block>
               </Block>
 
-              <Block style={{ marginTop: 30 }}>
+              <Block style={{ marginTop: 10 }}>
                 <TextView size={20} style={{ fontWeight: "600" }} color="gray">
                   Senha
                 </TextView>
@@ -141,19 +141,39 @@ export default class LogingScreen extends React.Component {
                       <TextView
                         size={20}
                         styleComponent={{
-                          fontWeight: "1000",
+                          fontWeight: "10",
                           alignSelf: "center",
                         }}
-                        color="white"
+                        color="black"
+                        bold
                       >
                         Login
                       </TextView>
                     </Block>
                   </Block>
                 </Button>
-                <Block style={{ marginTop: 10, marginLeft: 20 }}></Block>
               </Block>
-              <Block direction="row" style={{ marginTop: 40 }}>
+              <Block
+                style={{
+                  marginTop: -20,
+                  alignSelf: "center",
+                  alignItems: "center",
+                  borderRadius: 1,
+                  width: 300,
+                  height: 300,
+                  backgroundColor: "transparent",
+                }}
+              >
+                <Image
+                  style={{
+                    flex: 1,
+                    width: 200,
+                    resizeMode: "contain",
+                  }}
+                  source={require("../assets/parceria.png")}
+                ></Image>
+              </Block>
+              <Block direction="row" style={{ marginTop: -30 }}>
                 <TextView size={18}>Não possui uma conta? </TextView>
                 <Button
                   onPress={() => this.props.navigation.navigate("Register")}

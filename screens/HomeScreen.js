@@ -9,7 +9,7 @@ import * as firebase from "firebase";
 export default function HomeScreen({ navigation }) {
   return (
     <View style={{ flex: 1, alignItems: "center", justifyContent: "center" }}>
-      <Text>Home Screen Poura</Text>
+      <Text>Lista de Pedidos</Text>
       <Button style={styles.chat} onPress={() => navigation.navigate("Chat")}>
         <Block>
           <Block direction="row">
@@ -31,6 +31,31 @@ export default function HomeScreen({ navigation }) {
               color="#fff"
             >
               Chat
+            </TextView>
+          </Block>
+        </Block>
+      </Button>
+      <Button style={styles.chat} onPress={() => navigation.navigate("Orders")}>
+        <Block>
+          <Block direction="row">
+            <Image
+              style={{
+                width: 30,
+                height: 30,
+                resizeMode: "contain",
+                tintColor: "#fff",
+                paddingHorizontal: 20,
+                marginLeft: -40,
+                marginTop: 2,
+              }}
+              source={require("../assets/order.png")}
+            ></Image>
+            <TextView
+              style={{ marginLeft: 20, alignSelf: "center" }}
+              h5
+              color="#fff"
+            >
+              Orders
             </TextView>
           </Block>
         </Block>

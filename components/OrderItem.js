@@ -14,7 +14,7 @@ const GoalItem = (props) => {
         <Block direction="row">
           <Image
             style={{ width: 20, height: 20, tintColor: Colors.base_dark }}
-            source={require("../assets/images/time.png")}
+            source={require("../assets/time.png")}
           ></Image>
           <Block style={{ marginLeft: 10 }} centered>
             <TextView h6 color={Colors.base_extra_dark}>
@@ -25,7 +25,7 @@ const GoalItem = (props) => {
         <Button onPress={() => props.onDelete(props.id)}>
           <Image
             style={{ width: 20, height: 20, tintColor: Colors.base_dark }}
-            source={require("../assets/images/close.png")}
+            source={require("../assets/close.png")}
           ></Image>
         </Button>
       </Block>

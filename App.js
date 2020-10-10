@@ -9,6 +9,7 @@ import LoginScreen from "./screens/LoginScreen";
 import RegisterScreen from "./screens/RegisterScreen";
 import LoadingScreen from "./screens/LoadingScreen";
 import ChatScreen from "./screens/ChatScreen";
+import OrdersScreen from "./screens/OrdersScreen";
 
 import * as firebase from "firebase";
 
@@ -33,7 +34,15 @@ function App() {
   return (
     <NavigationContainer>
       <Stack.Navigator initialRouteName="Loading">
-        <Stack.Screen name="Home" component={HomeScreen} />
+        <Stack.Screen
+          name="Home"
+          component={HomeScreen}
+          options={{
+            headerShown: true,
+            headerTransparent: true,
+            headerTitle: "Meus Pedidos",
+          }}
+        />
 
         <Stack.Screen name="Register" component={RegisterScreen} />
         <Stack.Screen
@@ -53,6 +62,14 @@ function App() {
             headerShown: true,
             headerTransparent: true,
             headerTitle: "",
+          }}
+        />
+        <Stack.Screen
+          name="Orders"
+          component={OrdersScreen}
+          options={{
+            headerShown: false,
+            animationEnabled: false,
           }}
         />
         <Stack.Screen
