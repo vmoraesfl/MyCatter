@@ -41,6 +41,39 @@ export default function HomeScreen({ navigation }) {
           </Block>
         </Block>
       </Button>
+      <Button
+        shadow
+        onPress={() => {
+          navigation.navigate("Login");
+          firebase.auth().signOut();
+        }}
+        style={styles.logout}
+      >
+        <Block>
+          <Block direction="row">
+            <Image
+              style={{
+                width: 18,
+                height: 18,
+                resizeMode: "contain",
+                alignSelf: "center",
+                tintColor: "#291b5c",
+                marginLeft: -5,
+                marginTop: 1,
+                paddingHorizontal: 10,
+              }}
+              source={require("../assets/logout.png")}
+            ></Image>
+            <TextView
+              h5
+              style={{ marginLeft: 5, alignSelf: "center" }}
+              color="#291b5c"
+            >
+              Sair
+            </TextView>
+          </Block>
+        </Block>
+      </Button>
     </View>
   );
 }
