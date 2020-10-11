@@ -10,6 +10,7 @@ import {
 import { Block, TextView, Button, Input } from "../components";
 import { Colors } from "../components/color";
 import Stepper from "./Stepper";
+import openMap from "react-native-open-maps";
 
 const GoalItem = (props) => {
   const [isAddMode, AddMode] = useState(false);
@@ -108,25 +109,20 @@ const GoalItem = (props) => {
                     </TextView>
                   </Block>
                 </Block>
-              </Button>
-              <Button>
-                <Block
-                  color="#fbc210"
-                  borderRadius={5}
-                  margin={2}
-                  padding={5}
-                  shadow
-                >
-                  <Block
-                    style={{ width: 65 }}
-                    direction="column"
-                    middle
-                    centered
-                  >
-                    <TextView alignItems="center" size={12} color="black" bold>
-                      Rastrear Transporte
-                    </TextView>
-                  </Block>
+              </Block>
+            </Button>
+            <Button onPress={() => openMap({ ...props.coordinates, zoom: 12 })}>
+              <Block
+                color="#fbc210"
+                borderRadius={5}
+                margin={10}
+                padding={2}
+                shadow
+              >
+                <Block style={{ width: 65 }} direction="column" middle centered>
+                  <TextView alignItems="center" size={12} color="black" bold>
+                    Rastrear Transporte
+                  </TextView>
                 </Block>
               </Button>
               <Button>

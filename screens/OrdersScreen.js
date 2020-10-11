@@ -20,6 +20,8 @@ import GoalItem from "../components/OrderItem";
 import GoalInput from "../components/OrderInput";
 
 const randomStep = () => Math.floor(Math.random() * 3);
+const randomLat = () => (Math.random() * 28.48 - 33.75).toFixed(3) * 1;
+const randomLong = () => (Math.random() * 39 - 74).toFixed(3) * 1;
 
 export default class EmployeeScreen extends React.Component {
   state = {
@@ -30,6 +32,10 @@ export default class EmployeeScreen extends React.Component {
         value: "Caminhão de Mineração",
         status: "Aprovado",
         step: randomStep(),
+        coordinates: {
+          latitude: randomLat(),
+          longitude: randomLong(),
+        },
       },
       {
         id: "88",
@@ -37,6 +43,10 @@ export default class EmployeeScreen extends React.Component {
         value: "Mini Escavadeira",
         status: "Aprovado",
         step: randomStep(),
+        coordinates: {
+          latitude: randomLat(),
+          longitude: randomLong(),
+        },
       },
       {
         id: "99",
@@ -44,6 +54,10 @@ export default class EmployeeScreen extends React.Component {
         value: "Carregadeira Pequena",
         status: "Entregue",
         step: 3,
+        coordinates: {
+          latitude: randomLat(),
+          longitude: randomLong(),
+        },
       },
     ],
     isAddMode: false,
@@ -101,6 +115,7 @@ export default class EmployeeScreen extends React.Component {
                               status={itemData.item.status}
                               order={itemData.item.pedido}
                               step={itemData.item.step}
+                              coordinates={itemData.item.coordinates}
                             />
                           </Block>
                         )}
