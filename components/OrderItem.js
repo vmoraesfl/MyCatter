@@ -19,17 +19,16 @@ const GoalItem = (props) => {
         justifyContent="space-between"
       >
         <Block style={{ backgroundColor: "gray" }} direction="row">
-          <Block style={{ flex: 1 }}>
-            <Image
-              style={{
-                width: 70,
-                height: 70,
-                tintColor: Colors.base_dark,
-                alignSelf: "flex-start",
-                zIndex: 20,
-              }}
-              source={require("../assets/big_truck.jpg")}
-            />
+          <Block
+            style={{
+              width: 70,
+              height: 70,
+              tintColor: Colors.base_dark,
+              alignSelf: "flex-start",
+              zIndex: 20,
+            }}
+          >
+            <Image source={require("../assets/big_truck.jpg")} />
           </Block>
           <Block
             style={{
@@ -41,13 +40,13 @@ const GoalItem = (props) => {
             direction="column"
             centered
           >
-            <TextView h6 color={Colors.base_extra_dark}>
-              {props.title}
+            <TextView h5 bold color={"black"}>
+              Caminhão de Mineração
             </TextView>
-            <TextView h6 color={Colors.base_extra_dark}>
-              Pedido nº 21616161
+            <TextView h6 color={"gray"}>
+              Pedido no. 21616161
             </TextView>
-            <TextView h6 color={Colors.base_extra_dark}>
+            <TextView h6 color={"green"}>
               Status Finalizado
             </TextView>
           </Block>

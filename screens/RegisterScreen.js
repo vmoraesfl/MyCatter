@@ -58,12 +58,12 @@ export default class RegisterScreen extends React.Component {
                 <Ionicons
                   name="ios-arrow-round-back"
                   size={40}
-                  color="#FFF"
+                  color="black"
                 ></Ionicons>
               </Button>
               <Block>
-                <TextView h1 color="#291b5c">
-                  Sign Up
+                <TextView h1 color="black">
+                  Registre se
                 </TextView>
               </Block>
               <Block>
@@ -149,7 +149,7 @@ export default class RegisterScreen extends React.Component {
                 <Block style={{ marginTop: 10, alignSelf: "center" }}>
                   <Button onPress={this.handleSignup}>
                     <Block
-                      color="#5a33e8"
+                      color="#fbc210"
                       borderRadius={20}
                       padding={15}
                       shadow
@@ -164,7 +164,8 @@ export default class RegisterScreen extends React.Component {
                         <TextView
                           size={25}
                           style={{ fontWeight: "500" }}
-                          color="white"
+                          color="black"
+                          bold
                         >
                           Enter
                         </TextView>
@@ -198,7 +199,7 @@ const styles = StyleSheet.create({
     width: 40,
     height: 40,
     borderRadius: 20,
-    backgroundColor: Colors.base_dark,
+    backgroundColor: "#fbc210",
     alignItems: "center",
     justifyContent: "center",
   },

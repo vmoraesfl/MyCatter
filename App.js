@@ -1,5 +1,5 @@
 import * as React from "react";
-import { Text, View, StyleSheet } from "react-native";
+import { Text, View, StyleSheet, Alert } from "react-native";
 import { NavigationContainer } from "@react-navigation/native";
 import { createStackNavigator } from "@react-navigation/stack";
 import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
@@ -39,6 +39,7 @@ const Stack = createStackNavigator();
 function TabNav() {
   return (
     <Tab.Navigator
+      initialRouteName="Orders"
       screenOptions={({ route }) => ({
         tabBarIcon: ({ color, size }) => {
           let iconName;
@@ -89,24 +90,48 @@ function App() {
         <Stack.Screen
           name="TabNav"
           component={TabNav}
-          options={{ headerShown: false, headerTransparent: true }}
+          options={{
+            headerShown: false,
+            headerTransparent: true,
+            headerLeft: null,
+          }}
         />
 
-        <Stack.Screen name="Register" component={RegisterScreen} />
+        <Stack.Screen
+          name="Register"
+          component={RegisterScreen}
+          options={{
+            headerShown: false,
+            headerTransparent: true,
+            headerLeft: null,
+          }}
+        />
         <Stack.Screen
           name="Loading"
           component={LoadingScreen}
-          options={{ headerShown: false, headerTransparent: true }}
+          options={{
+            headerShown: false,
+            headerTransparent: true,
+            headerLeft: null,
+          }}
         />
         <Stack.Screen
           name="Landing"
           component={LandingScreen}
-          options={{ headerShown: false, headerTransparent: true }}
+          options={{
+            headerShown: false,
+            headerTransparent: true,
+            headerLeft: null,
+          }}
         />
         <Stack.Screen
           name="Orders"
           component={OrdersScreen}
-          options={{ headerShown: false, headerTransparent: true }}
+          options={{
+            headerShown: false,
+            headerTransparent: true,
+            headerLeft: null,
+          }}
         />
         <Stack.Screen
           name="Login"
@@ -115,6 +140,7 @@ function App() {
             headerShown: true,
             headerTransparent: true,
             headerTitle: "",
+            headerLeft: null,
           }}
         />
         <Stack.Screen
@@ -122,6 +148,8 @@ function App() {
           component={ChatScreen}
           options={{
             headerShown: true,
+            headerTitle: "Fale com a gente",
+            headerLeft: null,
           }}
         />
       </Stack.Navigator>

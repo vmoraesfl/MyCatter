@@ -1,47 +1,49 @@
 import * as React from "react";
-import { StyleSheet, View, Text, Image } from "react-native";
-
+import { StyleSheet, View, Text, Image, Alert } from "react-native";
+import { NavigationActions, StackActions } from "react-navigation";
 import { Block, TextView, Button, Input } from "../components";
 import { Colors } from "../components/color";
 
 import * as firebase from "firebase";
 
-export default function HomeScreen({ navigation }) {
-  return (
-    <View style={{ flex: 1, alignItems: "center", justifyContent: "center" }}>
-      <TextView style={{ marginLeft: 20, alignSelf: "center" }} h5 color="#000">
-        Deseja Encerrar sua Sessão?
-      </TextView>
-      <Button
-        shadow
-        onPress={() => {
-          navigation.navigate("Login");
-          firebase.auth().signOut();
-        }}
-        style={styles.logout}
-      >
-        <Block>
-          <Block direction="row">
-            <TextView
-              h5
-              style={{ marginLeft: 5, alignSelf: "center" }}
-              color="#291b5c"
-            >
-              Sim
-            </TextView>
-          </Block>
-        </Block>
-      </Button>
-    </View>
-  );
-}
+export default function LogoutScreen({ navigation }) {
+  function createTwoButtonAlert() {
+    Alert.alert(
+      "Deseja se deslogar?",
+      "",
 
-const styles = StyleSheet.create({
-  logout: {
-    alignSelf: "center",
-    padding: 18,
-    paddingHorizontal: 30,
-    borderRadius: 25,
-    backgroundColor: "white",
-  },
-});
+      [
+        {
+          text: "Não",
+          onPress: () => {
+            navigation.navigate("Orders");
+          },
+          style: "cancel",
+        },
+        {
+          text: "Sim",
+          onPress: () => {
+            firebase.auth().signOut();
+            navigation.navigate("Login");
+          },
+        },
+      ],
+      { cancelable: false }
+    );
+  }
+
+  React.useEffect(() => {
+    const unsubscribe = navigation.addListener("tabPress", (e) => {
+      // Prevent default behavior
+      e.preventDefault();
+
+      createTwoButtonAlert();
+      // Do something manually
+      // ...
+    });
+
+    return unsubscribe;
+  }, [navigation]);
+
+  return <View>{createTwoButtonAlert()}</View>;
+}
