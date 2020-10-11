@@ -1,24 +1,21 @@
-import React, { useState, useEffect } from "react";
+import * as React from "react";
 import { StyleSheet, View, Text, Image } from "react-native";
 
 import { Block, TextView, Button, Input } from "../components";
 import { Colors } from "../components/color";
-import BottomNavBar from "../components/BottomNavBar";
-
-import GoalItem from "../components/OrderItem";
-import GoalInput from "../components/OrderInput";
 
 import * as firebase from "firebase";
 
 export default function HomeScreen({ navigation }) {
-  const [isAddMode, AddMode] = useState(false);
-
-  function addGoalHandler(newOrder) {}
-
   return (
-    <Block style={{ flex: 1, alignItems: "center", justifyContent: "center" }}>
-      <Text>Lista de Pedidos</Text>
-
+    <View style={{ flex: 1, alignItems: "center", justifyContent: "center" }}>
+      <TextView
+        style={{ marginLeft: 20, alignSelf: "flex-start" }}
+        h5
+        color="#000"
+      >
+        Meus Produtos
+      </TextView>
       <Button style={styles.chat} onPress={() => navigation.navigate("Chat")}>
         <Block>
           <Block direction="row">
@@ -40,31 +37,6 @@ export default function HomeScreen({ navigation }) {
               color="#fff"
             >
               Chat
-            </TextView>
-          </Block>
-        </Block>
-      </Button>
-      <Button style={styles.chat} onPress={() => navigation.navigate("Orders")}>
-        <Block>
-          <Block direction="row">
-            <Image
-              style={{
-                width: 30,
-                height: 30,
-                resizeMode: "contain",
-                tintColor: "#fff",
-                paddingHorizontal: 20,
-                marginLeft: -40,
-                marginTop: 2,
-              }}
-              source={require("../assets/order.png")}
-            ></Image>
-            <TextView
-              style={{ marginLeft: 20, alignSelf: "center" }}
-              h5
-              color="#fff"
-            >
-              Orders
             </TextView>
           </Block>
         </Block>
@@ -102,22 +74,7 @@ export default function HomeScreen({ navigation }) {
           </Block>
         </Block>
       </Button>
-      <Block shadow>
-        <Button style={styles.addEmployee} onPress={() => {}}>
-          <Block direction="row" centered style={{ padding: 5 }}>
-            <TextView
-              style={{ marginLeft: 5, alignSelf: "center" }}
-              h5
-              bold
-              color="#fff"
-            >
-              Adicionar Pedido
-            </TextView>
-          </Block>
-        </Button>
-      </Block>
-      <BottomNavBar name="Home" />
-    </Block>
+    </View>
   );
 }
 
@@ -136,11 +93,5 @@ const styles = StyleSheet.create({
     paddingHorizontal: 60,
     shadowColor: "gray",
     shadowOpacity: 1,
-  },
-  addEmployee: {
-    marginTop: 40,
-    padding: 15,
-    borderRadius: 25,
-    backgroundColor: "#5a33e8",
   },
 });
