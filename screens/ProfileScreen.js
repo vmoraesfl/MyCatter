@@ -1,3 +1,12 @@
+// Analisando os comentários de técnicos de tecnologia da Sotreq,
+// nosso grupo chegou à conclusão de que seria interessante usar
+// dados fornecidos pela Sales Force / SAP, que porventura estariam
+// descentralizados nessas plataformas, para fazer uma análise,
+// filtragem e tratamento de dados, a fim de que seja possível
+// produzir um JSON com os dados a serem utilizados.Nesse
+// arquivo, utilizaremos na linha 27 um possível produto
+// de diversos requests à infraestrutura de dados da empresa
+
 import React, { Component, useState } from "react";
 import {
   StyleSheet,
@@ -15,10 +24,15 @@ import * as firebase from "firebase";
 
 const userData = () => firebase.auth().currentUser;
 
+const fakeUserData = {
+  CPF: "650.533.440-86",
+  phone: "+55 21 99999-8888",
+  CNPJ: "92.110.118/0001-90",
+  stateRegistration: "004/0836100",
+  address: "Praça General Tibúrcio, 80, Praia Vermelha, Rio de Janeiro - RJ",
+}
+
 export default class Profile extends Component {
-  /* static navigationOptions = ({ navigation }) => ({
-    title: navigation.getParam("name"),
-  }); */
 
   state = {
     email: "",
@@ -26,16 +40,9 @@ export default class Profile extends Component {
     message: [],
   };
 
-  /*  get user() {
-    let name = this.state.displayName;
-    return {
-      _id: Fire.uid,
-      name: name,
-    };
-  } */
-
   render() {
     const { displayName, email, phoneNumber } = userData();
+    const { CPF, CNPJ, phone, stateRegistration, address } = fakeUserData
     return (
       <ScrollView backgroundColor={"#e6d4ff"} style={{ flex: 1 }}>
         <SafeAreaView>
@@ -123,7 +130,7 @@ export default class Profile extends Component {
                       style={{ fontSize: 20 }}
                       placeholder=""
                       autoCapitalize="none"
-                      value={"+55 21 99999-8888"}
+                      value={phone}
                     />
                   </Block>
                 </Block>
@@ -147,7 +154,7 @@ export default class Profile extends Component {
                       style={{ fontSize: 20 }}
                       placeholder=""
                       autoCapitalize="none"
-                      value={"CPF: 650.533.440-86"}
+                      value={CPF}
                     />
                   </Block>
                 </Block>
@@ -171,7 +178,7 @@ export default class Profile extends Component {
                       style={{ fontSize: 20 }}
                       placeholder=""
                       autoCapitalize="none"
-                      value={"92.110.118/0001-90"}
+                      value={CNPJ}
                     />
                   </Block>
                 </Block>
@@ -195,7 +202,7 @@ export default class Profile extends Component {
                       style={{ fontSize: 20 }}
                       placeholder=""
                       autoCapitalize="none"
-                      value={"004/0836100"}
+                      value={stateRegistration}
                     />
                   </Block>
                 </Block>
@@ -219,9 +226,7 @@ export default class Profile extends Component {
                       style={{ fontSize: 20 }}
                       placeholder=""
                       autoCapitalize="none"
-                      value={
-                        "Praça General Tibúrcio, 80, Praia Vermelha, Rio de Janeiro - RJ"
-                      }
+                      value={address}
                     />
                   </Block>
                 </Block>
