@@ -9,6 +9,7 @@ import {
 } from "react-native";
 import { Block, TextView, Button, Input } from "../components";
 import { Colors } from "../components/color";
+import Stepper from "./Stepper";
 
 const GoalItem = (props) => {
   const [isAddMode, AddMode] = useState(false);
@@ -85,6 +86,7 @@ const GoalItem = (props) => {
         </Block>
         {isAddMode && (
           <Block direction="column" padding={10}>
+            <Stepper randomStep={props.step}/>
             <Button>
               <Block
                 color="#fbc210"

@@ -19,26 +19,31 @@ import { Colors } from "../components/color";
 import GoalItem from "../components/OrderItem";
 import GoalInput from "../components/OrderInput";
 
+const randomStep = () => Math.floor(Math.random() * 3);
+
 export default class EmployeeScreen extends React.Component {
   state = {
     ordersList: [
       {
         id: "51",
         pedido: "123456",
-        value: "Cliente: Ana Delfina",
-        status: "Pagamento Aprovado",
+        value: "Caminhão de Mineração",
+        status: "Aprovado",
+        step: randomStep()
       },
       {
         id: "88",
         pedido: "123456",
-        value: "Cliente: Pedro Paulo",
-        status: "Cancelado",
+        value: "Mini Escavadeira",
+        status: "Aprovado",
+        step: randomStep()
       },
       {
         id: "99",
         pedido: "123456",
-        value: "Cliente: João Paulo",
+        value: "Carregadeira Pequena",
         status: "Entregue",
+        step: 3
       },
     ],
     isAddMode: false,
@@ -90,6 +95,7 @@ export default class EmployeeScreen extends React.Component {
                               title={itemData.item.value}
                               status={itemData.item.status}
                               order={itemData.item.pedido}
+                              step={itemData.item.step}
                             />
                           </Block>
                         )}
