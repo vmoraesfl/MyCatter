@@ -109,20 +109,27 @@ const GoalItem = (props) => {
                     </TextView>
                   </Block>
                 </Block>
-              </Block>
-            </Button>
-            <Button onPress={() => openMap({ ...props.coordinates, zoom: 12 })}>
-              <Block
-                color="#fbc210"
-                borderRadius={5}
-                margin={10}
-                padding={2}
-                shadow
+              </Button>
+              <Button
+                onPress={() => openMap({ ...props.coordinates, zoom: 12 })}
               >
-                <Block style={{ width: 65 }} direction="column" middle centered>
-                  <TextView alignItems="center" size={12} color="black" bold>
-                    Rastrear Transporte
-                  </TextView>
+                <Block
+                  color="#fbc210"
+                  borderRadius={5}
+                  margin={2}
+                  padding={5}
+                  shadow
+                >
+                  <Block
+                    style={{ width: 65 }}
+                    direction="column"
+                    middle
+                    centered
+                  >
+                    <TextView alignItems="center" size={12} color="black" bold>
+                      Rastrear Transporte
+                    </TextView>
+                  </Block>
                 </Block>
               </Button>
               <Button>
