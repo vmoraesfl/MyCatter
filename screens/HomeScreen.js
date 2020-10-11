@@ -16,9 +16,14 @@ export default function HomeScreen({ navigation }) {
   function addGoalHandler(newOrder) {}
 
   return (
-    <Block style={{ flex: 1, alignItems: "center", justifyContent: "center" }}>
-      <Text>Lista de Pedidos</Text>
-
+    <View style={{ flex: 1, alignItems: "center", justifyContent: "center" }}>
+      <TextView
+        style={{ marginLeft: 20, alignSelf: "flex-start" }}
+        h5
+        color="#000"
+      >
+        Lista de Produtos
+      </TextView>
       <Button style={styles.chat} onPress={() => navigation.navigate("Chat")}>
         <Block>
           <Block direction="row">
@@ -116,7 +121,8 @@ export default function HomeScreen({ navigation }) {
           </Block>
         </Button>
       </Block>
-    </Block>
+      <BottomNavBar name="Home" />
+    </View>
   );
 }
 
