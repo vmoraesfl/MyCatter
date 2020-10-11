@@ -88,9 +88,6 @@ export default class LogingScreen extends React.Component {
 
             <Block>
               <Block style={{ marginTop: -50 }}>
-                <TextView size={20} style={{ fontWeight: "600" }} color="gray">
-                  Endereço de Email
-                </TextView>
                 <Block
                   borderWidth={13}
                   borderColor="#fff"
@@ -99,8 +96,8 @@ export default class LogingScreen extends React.Component {
                   style={{ marginTop: 10, marginLeft: 20, marginRight: 20 }}
                 >
                   <TextInput
-                    style={{ fontSize: 20 }}
-                    placeholder="exemplo@provedor.com"
+                    style={{ fontSize: 18 }}
+                    placeholder="Digite o seu endereço de email"
                     onChangeText={(email) => this.setState({ email })}
                     value={this.state.email}
                     autoCapitalize="none"
@@ -110,10 +107,6 @@ export default class LogingScreen extends React.Component {
               </Block>
 
               <Block style={{ marginTop: 10 }}>
-                <TextView size={20} style={{ fontWeight: "600" }} color="gray">
-                  Senha
-                </TextView>
-
                 <Block
                   borderWidth={13}
                   borderColor="#fbf7ff"
@@ -122,7 +115,7 @@ export default class LogingScreen extends React.Component {
                   style={{ marginTop: 10, marginLeft: 20, marginRight: 20 }}
                 >
                   <TextInput
-                    style={{ fontSize: 20 }}
+                    style={{ fontSize: 18 }}
                     placeholder="Digite a sua senha"
                     secureTextEntry
                     autoCapitalize="none"
@@ -137,7 +130,7 @@ export default class LogingScreen extends React.Component {
                 </TextView>
               </Block>
 
-              <Block direction="row" style={{ marginTop: 20 }}>
+              <Block direction="row" style={{ marginTop: 0 }}>
                 <Button style={{ flex: 1 }} onPress={this.handleLoginOwner}>
                   <Block
                     color="#fbc210"
@@ -162,46 +155,52 @@ export default class LogingScreen extends React.Component {
                   </Block>
                 </Button>
               </Block>
+
+              <Block
+                direction="row"
+                justifyContent="center"
+                style={{ marginTop: 30 }}
+              >
+                <TextView size={16}>Não possui uma conta? </TextView>
+                <Button
+                  onPress={() => this.props.navigation.navigate("Register")}
+                >
+                  <TextView size={16} style color="#fbc210" bold>
+                    Sign Up
+                  </TextView>
+                </Button>
+              </Block>
+              <Block
+                direction="row"
+                justifyContent="center"
+                style={{ marginTop: 5 }}
+              >
+                <Button onPress={() => this.createTwoButtonAlert()}>
+                  <TextView size={16} color="#fbc210" bold>
+                    Esqueceu a senha?
+                  </TextView>
+                </Button>
+              </Block>
+
               <Block
                 style={{
-                  marginTop: -20,
+                  marginTop: 10,
                   alignSelf: "center",
                   alignItems: "center",
                   borderRadius: 1,
                   width: 300,
-                  height: 300,
+                  height: 150,
                   backgroundColor: "transparent",
                 }}
               >
                 <Image
                   style={{
                     flex: 1,
-                    width: 200,
+                    width: 150,
                     resizeMode: "contain",
                   }}
                   source={require("../assets/parceria.png")}
                 ></Image>
-              </Block>
-              <Block direction="row" style={{ marginTop: -30 }}>
-                <TextView size={18}>Não possui uma conta? </TextView>
-                <Button
-                  onPress={() => this.props.navigation.navigate("Register")}
-                >
-                  <TextView size={18} style color="#5a33e8">
-                    Sign up
-                  </TextView>
-                </Button>
-              </Block>
-              <Block style={{ marginTop: 10 }}>
-                <Button onPress={() => this.createTwoButtonAlert()}>
-                  <TextView
-                    size={18}
-                    style={{ fontWeight: "500" }}
-                    color="#5a33e8"
-                  >
-                    Esqueceu a senha?
-                  </TextView>
-                </Button>
               </Block>
             </Block>
           </Block>
