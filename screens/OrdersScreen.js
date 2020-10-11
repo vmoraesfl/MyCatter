@@ -81,71 +81,6 @@ export default class EmployeeScreen extends React.Component {
                 </Block>
               </Block>
             </Block>
-
-            <Block
-              style={{
-                marginTop: -10,
-                paddingHorizontal: 30,
-                backgroundColor: Colors.base_light,
-              }}
-            >
-              <Block direction="row" justifyContent="space-between">
-                <Button
-                  style={styles.chat}
-                  onPress={() => this.props.navigation.navigate("Chat")}
-                >
-                  <Block>
-                    <Block direction="row">
-                      <Image
-                        style={{
-                          width: 30,
-                          height: 30,
-                          resizeMode: "contain",
-                          tintColor: "#fff",
-                          paddingHorizontal: 20,
-                          marginLeft: -40,
-                          marginTop: 2,
-                        }}
-                        source={require("../assets/chatbox-outline.png")}
-                      ></Image>
-                      <TextView
-                        style={{ marginLeft: 20, alignSelf: "center" }}
-                        h5
-                        color="#fff"
-                      >
-                        Chat
-                      </TextView>
-                    </Block>
-                  </Block>
-                </Button>
-                <Button shadow onPress={this.signOutUser} style={styles.logout}>
-                  <Block>
-                    <Block direction="row">
-                      <Image
-                        style={{
-                          width: 18,
-                          height: 18,
-                          resizeMode: "contain",
-                          alignSelf: "center",
-                          tintColor: "#291b5c",
-                          marginLeft: -5,
-                          marginTop: 1,
-                          paddingHorizontal: 10,
-                        }}
-                        source={require("../assets/logout.png")}
-                      ></Image>
-                      <TextView
-                        h5
-                        style={{ marginLeft: 5, alignSelf: "center" }}
-                        color="#291b5c"
-                      >
-                        Sair
-                      </TextView>
-                    </Block>
-                  </Block>
-                </Button>
-              </Block>
-            </Block>
           </SafeAreaView>
         </ScrollView>
       </Block>
@@ -166,25 +101,10 @@ const styles = StyleSheet.create({
     marginLeft: 15,
     marginTop: 5,
   },
-  logout: {
-    alignSelf: "center",
-    padding: 18,
-    paddingHorizontal: 30,
-    borderRadius: 25,
-    backgroundColor: "white",
-  },
-  chat: {
-    padding: 15,
-    borderRadius: 25,
-    backgroundColor: Colors.base_dark,
-    paddingHorizontal: 60,
-    shadowColor: "gray",
-    shadowOpacity: 1,
-  },
   addEmployee: {
     marginTop: 40,
     padding: 15,
     borderRadius: 25,
-    backgroundColor: "#5a33e8",
+    backgroundColor: "#fff",
   },
 });

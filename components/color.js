@@ -10,9 +10,11 @@ const Colors = {
   green_op: "#CBFFD0",
   base_extra_light: "#f1e8ff",
   base_light: "#e6d4ff",
-  base_regular: "#6b42ff",
+  base_regular: "#696969",
   base_dark: "#5a33e8",
   base_extra_dark: "#291b5c",
+  black: "#000",
+  white: "#fff",
 };
 
 export { Colors };
