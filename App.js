@@ -87,6 +87,9 @@ function App() {
     <NavigationContainer>
       <Stack.Navigator initialRouteName="Loading">
         <Stack.Screen name="Home" component={HomeScreen} />
+        <Stack.Screen name="Orders" component={OrdersScreen} />
+        <Stack.Screen name="Chat" component={ChatScreen} />
+        <Stack.Screen name="Profile" component={ChatScreen} />
         <Stack.Screen
           name="TabNav"
           component={TabNav}
@@ -96,7 +99,6 @@ function App() {
             headerLeft: null,
           }}
         />
-
         <Stack.Screen
           name="Register"
           component={RegisterScreen}
@@ -125,30 +127,12 @@ function App() {
           }}
         /> */}
         <Stack.Screen
-          name="Orders"
-          component={OrdersScreen}
-          options={{
-            headerShown: false,
-            headerTransparent: true,
-            headerLeft: null,
-          }}
-        />
-        <Stack.Screen
           name="Login"
           component={LoginScreen}
           options={{
             headerShown: true,
             headerTransparent: true,
             headerTitle: "",
-            headerLeft: null,
-          }}
-        />
-        <Stack.Screen
-          name="Chat"
-          component={ChatScreen}
-          options={{
-            headerShown: true,
-            headerTitle: "Fale com a gente",
             headerLeft: null,
           }}
         />
