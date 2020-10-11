@@ -116,7 +116,6 @@ export default function HomeScreen({ navigation }) {
           </Block>
         </Button>
       </Block>
-      <BottomNavBar name="Home" />
     </Block>
   );
 }

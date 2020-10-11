@@ -34,50 +34,97 @@ if (!firebase.apps.length) {
 }
 
 const Tab = createBottomTabNavigator();
+const Stack = createStackNavigator();
+
+function TabNav() {
+  return (
+    <Tab.Navigator
+      screenOptions={({ route }) => ({
+        tabBarIcon: ({ color, size }) => {
+          let iconName;
+
+          switch (route.name) {
+            case "Orders":
+              iconName = "home";
+              break;
+            case "Chat":
+              iconName = "mail";
+              break;
+            case "Website":
+              iconName = "link";
+              break;
+            case "Profile":
+              iconName = "user";
+              break;
+            case "Sair":
+              iconName = "log-out";
+              break;
+            default:
+              iconName = "circle";
+              break;
+          }
+
+          return <Icon name={iconName} size={size} color={color} />;
+        },
+      })}
+      tabBarOptions={{
+        activeTintColor: "#F8C210",
+        inactiveTintColor: "#000",
+      }}
+    >
+      <Tab.Screen name="Orders" component={OrdersScreen} />
+      <Tab.Screen name="Chat" component={ChatScreen} />
+      <Tab.Screen name="Website" component={HomeScreen} />
+      <Tab.Screen name="Profile" component={ProfileScreen} />
+      <Tab.Screen name="Sair" component={LogoutScreen} />
+    </Tab.Navigator>
+  );
+}
 
 function App() {
   return (
     <NavigationContainer>
-      <Tab.Navigator
-        screenOptions={({ route }) => ({
-          tabBarIcon: ({ color, size }) => {
-            let iconName;
+      <Stack.Navigator initialRouteName="Loading">
+        <Stack.Screen name="Home" component={HomeScreen} />
+        <Stack.Screen
+          name="TabNav"
+          component={TabNav}
+          options={{ headerShown: false, headerTransparent: true }}
+        />
 
-            switch (route.name) {
-              case "Home":
-                iconName = "home";
-                break;
-              case "Chat":
-                iconName = "mail";
-                break;
-              case "Website":
-                iconName = "link";
-                break;
-              case "Profile":
-                iconName = "user";
-                break;
-              case "Sair":
-                iconName = "log-out";
-                break;
-              default:
-                iconName = "circle";
-                break;
-            }
-
-            return <Icon name={iconName} size={size} color={color} />;
-          },
-        })}
-        tabBarOptions={{
-          activeTintColor: "#F8C210",
-          inactiveTintColor: "#000",
-        }}
-      >
-        <Tab.Screen name="Home" component={HomeScreen} />
-        <Tab.Screen name="Chat" component={ChatScreen} />
-        <Tab.Screen name="Website" component={HomeScreen} />
-        <Tab.Screen name="Profile" component={ProfileScreen} />
-        <Tab.Screen name="Sair" component={LogoutScreen} />
-      </Tab.Navigator>
+        <Stack.Screen name="Register" component={RegisterScreen} />
+        <Stack.Screen
+          name="Loading"
+          component={LoadingScreen}
+          options={{ headerShown: false, headerTransparent: true }}
+        />
+        <Stack.Screen
+          name="Landing"
+          component={LandingScreen}
+          options={{ headerShown: false, headerTransparent: true }}
+        />
+        <Stack.Screen
+          name="Orders"
+          component={OrdersScreen}
+          options={{ headerShown: false, headerTransparent: true }}
+        />
+        <Stack.Screen
+          name="Login"
+          component={LoginScreen}
+          options={{
+            headerShown: true,
+            headerTransparent: true,
+            headerTitle: "",
+          }}
+        />
+        <Stack.Screen
+          name="Chat"
+          component={ChatScreen}
+          options={{
+            headerShown: true,
+          }}
+        />
+      </Stack.Navigator>
     </NavigationContainer>
   );
 }

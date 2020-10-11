@@ -1,97 +1,84 @@
-import * as React from "react";
-import { StyleSheet, View, Text, Image } from "react-native";
-
-import { Block, TextView, Button, Input } from "../components";
-import { Colors } from "../components/color";
-
+import React, { Component } from "react";
+import { StyleSheet, Text, View, Image, TouchableOpacity } from "react-native";
 import * as firebase from "firebase";
 
-export default function HomeScreen({ navigation }) {
-  return (
-    <View style={{ flex: 1, alignItems: "center", justifyContent: "center" }}>
-      <TextView
-        style={{ marginLeft: 20, alignSelf: "flex-start" }}
-        h5
-        color="#000"
-      >
-        Meus Produtos
-      </TextView>
-      <Button style={styles.chat} onPress={() => navigation.navigate("Chat")}>
-        <Block>
-          <Block direction="row">
-            <Image
-              style={{
-                width: 250,
-                height: 100,
-                resizeMode: "contain",
-                tintColor: "#fff",
-                paddingHorizontal: 20,
-                marginLeft: -40,
-                marginTop: 2,
-              }}
-              source={require("../assets/chatbox-outline.png")}
-            ></Image>
-            <TextView
-              style={{ marginLeft: 20, alignSelf: "flex-start" }}
-              h5
-              color="#fff"
-            >
-              Chat
-            </TextView>
-          </Block>
-        </Block>
-      </Button>
-      <Button
-        shadow
-        onPress={() => {
-          navigation.navigate("Login");
-          firebase.auth().signOut();
-        }}
-        style={styles.logout}
-      >
-        <Block>
-          <Block direction="row">
-            <Image
-              style={{
-                width: 18,
-                height: 18,
-                resizeMode: "contain",
-                alignSelf: "center",
-                tintColor: "#291b5c",
-                marginLeft: -5,
-                marginTop: 1,
-                paddingHorizontal: 10,
-              }}
-              source={require("../assets/logout.png")}
-            ></Image>
-            <TextView
-              h5
-              style={{ marginLeft: 5, alignSelf: "center" }}
-              color="#291b5c"
-            >
-              Sair
-            </TextView>
-          </Block>
-        </Block>
-      </Button>
-    </View>
-  );
+const userData = () => firebase.auth().currentUser;
+
+export default class Profile extends Component {
+  /* static navigationOptions = ({ navigation }) => ({
+    title: navigation.getParam("name"),
+  }); */
+
+  state = {
+    email: "",
+    displayName: "",
+    message: [],
+  };
+
+  /*  get user() {
+    let name = this.state.displayName;
+    return {
+      _id: Fire.uid,
+      name: name,
+    };
+  } */
+
+  render() {
+    const { displayName, email, phoneNumber } = userData();
+    return (
+      <View style={styles.container}>
+        <View style={styles.body}>
+          <View style={styles.bodyContent}>
+            <Text style={styles.name}>{displayName}</Text>
+            <Text style={styles.info}>{email}</Text>
+            <Text style={styles.description}>CPF: 650.533.440-86</Text>
+            <Text style={styles.description}>CNPJ: 92.110.118/0001-90</Text>
+            <Text style={styles.description}>
+              Inscrição Estadual: 004/0836100
+            </Text>
+            <Text style={styles.description}>Telefone: +55 21 99999-8888</Text>
+            <Text style={styles.description}>
+              Praça General Tibúrcio, 80, Praia Vermelha, Rio de Janeiro - RJ
+            </Text>
+          </View>
+        </View>
+      </View>
+    );
+  }
 }
 
 const styles = StyleSheet.create({
-  logout: {
-    alignSelf: "center",
-    padding: 18,
-    paddingHorizontal: 30,
-    borderRadius: 25,
-    backgroundColor: "white",
+  header: {
+    backgroundColor: "#00BFFF",
+    height: 200,
   },
-  chat: {
-    padding: 15,
-    borderRadius: 25,
-    backgroundColor: Colors.base_regular,
-    paddingHorizontal: 60,
-    shadowColor: "gray",
-    shadowOpacity: 1,
+  name: {
+    fontSize: 26,
+    color: "#FFFFFF",
+    fontWeight: "700",
+  },
+  body: {
+    marginTop: 40,
+  },
+  bodyContent: {
+    flex: 1,
+    alignItems: "center",
+    padding: 30,
+  },
+  name: {
+    fontSize: 38,
+    color: "#696969",
+    fontWeight: "600",
+  },
+  info: {
+    fontSize: 20,
+    color: "#00BFFF",
+    marginTop: 10,
+  },
+  description: {
+    fontSize: 16,
+    color: "#696969",
+    marginTop: 30,
+    textAlign: "center",
   },
 });

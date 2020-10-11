@@ -26,7 +26,6 @@ export default class ChatScreen extends Component {
 
   get user() {
     let name = this.state.displayName;
-    console.log("name é: ", name);
     return {
       _id: Fire.uid,
       name: name,
