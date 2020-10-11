@@ -12,6 +12,7 @@ import ChatScreen from "./screens/ChatScreen";
 import OrdersScreen from "./screens/OrdersScreen";
 
 import * as firebase from "firebase";
+import Profile from "./screens/Profile";
 
 const firebaseConfig = {
   apiKey: "AIzaSyBuD004lDVjigZTXeQCReXi5o66C9xH5_Y",
@@ -77,6 +78,13 @@ function App() {
           component={ChatScreen}
           options={{
             headerShown: true,
+          }}
+        />
+        <Stack.Screen
+          name="Perfil"
+          component={Profile}
+          options={{
+            headerShown: true
           }}
         />
       </Stack.Navigator>

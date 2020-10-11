@@ -60,6 +60,31 @@ export default function HomeScreen({ navigation }) {
           </Block>
         </Block>
       </Button>
+      <Button style={styles.chat} onPress={() => navigation.navigate("Perfil")}>
+        <Block>
+          <Block direction="row">
+            <Image
+              style={{
+                width: 30,
+                height: 30,
+                resizeMode: "contain",
+                tintColor: "#fff",
+                paddingHorizontal: 20,
+                marginLeft: -40,
+                marginTop: 2,
+              }}
+              source={require("../assets/order.png")}
+            ></Image>
+            <TextView
+              style={{ marginLeft: 20, alignSelf: "center" }}
+              h5
+              color="#fff"
+            >
+              Profile
+            </TextView>
+          </Block>
+        </Block>
+      </Button>
       <Button
         shadow
         onPress={() => {
