@@ -6,6 +6,7 @@ import {
   TouchableOpacity,
   Image,
   Modal,
+  Alert,
 } from "react-native";
 import { Block, TextView, Button, Input } from "../components";
 import { Colors } from "../components/color";
@@ -14,6 +15,16 @@ import openMap from "react-native-open-maps";
 
 const GoalItem = (props) => {
   const [isAddMode, AddMode] = useState(false);
+
+  function nfAlert() {
+    Alert.alert(
+      "Nota Fiscal Eletrônica",
+      "A NFe foi enviada para o seu email",
+      [{ text: "OK", onPress: () => {} }],
+      { cancelable: true }
+    );
+  }
+
   return (
     <Block style={{ paddingHorizontal: 0 }}>
       <Block

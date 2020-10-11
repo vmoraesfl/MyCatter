@@ -32,6 +32,7 @@ export default class EmployeeScreen extends React.Component {
         value: "Caminhão de Mineração",
         status: "Aprovado",
         step: randomStep(),
+        image: "big_truck",
         coordinates: {
           latitude: randomLat(),
           longitude: randomLong(),
@@ -43,6 +44,7 @@ export default class EmployeeScreen extends React.Component {
         value: "Mini Escavadeira",
         status: "Aprovado",
         step: randomStep(),
+        image: "mini_escavadeira",
         coordinates: {
           latitude: randomLat(),
           longitude: randomLong(),
@@ -54,6 +56,7 @@ export default class EmployeeScreen extends React.Component {
         value: "Carregadeira Pequena",
         status: "Entregue",
         step: 3,
+        image: "carregadeira",
         coordinates: {
           latitude: randomLat(),
           longitude: randomLong(),
@@ -115,6 +118,7 @@ export default class EmployeeScreen extends React.Component {
                               status={itemData.item.status}
                               order={itemData.item.pedido}
                               step={itemData.item.step}
+                              image={itemData.item.image}
                               coordinates={itemData.item.coordinates}
                             />
                           </Block>
@@ -135,7 +139,7 @@ const styles = StyleSheet.create({
   container: {
     marginTop: 20,
     alignSelf: "center",
-    height: 450,
+    height: 700,
     width: "100%",
     borderRadius: 5,
     backgroundColor: "transparent",
