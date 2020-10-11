@@ -23,6 +23,7 @@ const GoalItem = (props) => {
         }}
         justifyContent="space-between"
       >
+
         <Block style={{ backgroundColor: "transparent" }} direction="row">
           <Block style={{ flex: 1 }}>
             <Image
@@ -33,6 +34,7 @@ const GoalItem = (props) => {
               resizeMode="cover"
               source={require("../assets/big_truck.jpg")}
             />
+
           </Block>
           <Block
             style={{
@@ -44,6 +46,7 @@ const GoalItem = (props) => {
             direction="column"
             centered
           >
+
             <TextView style={{ fontSize: 16 }} color={Colors.black}>
               {props.title}
             </TextView>
@@ -52,6 +55,7 @@ const GoalItem = (props) => {
             </TextView>
             <TextView style={{ fontSize: 14 }} color={Colors.black}>
               Status: {props.status}
+
             </TextView>
           </Block>
           <Block
