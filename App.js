@@ -6,7 +6,7 @@ import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
 import Icon from "react-native-vector-icons/Feather";
 
 import HomeScreen from "./screens/HomeScreen";
-import LandingScreen from "./screens/LandingScreen";
+//import MapScreen from "./screens/MapScreen";
 import LoginScreen from "./screens/LoginScreen";
 import RegisterScreen from "./screens/RegisterScreen";
 import LoadingScreen from "./screens/LoadingScreen";
@@ -115,15 +115,15 @@ function App() {
             headerLeft: null,
           }}
         />
-        <Stack.Screen
-          name="Landing"
-          component={LandingScreen}
+        {/* <Stack.Screen
+          name="Map"
+          component={MapScreen}
           options={{
             headerShown: false,
             headerTransparent: true,
             headerLeft: null,
           }}
-        />
+        /> */}
         <Stack.Screen
           name="Orders"
           component={OrdersScreen}
