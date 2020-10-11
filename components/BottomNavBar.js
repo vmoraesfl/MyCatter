@@ -11,10 +11,10 @@ export default function BottomNavBar({ name }) {
     { width: 38 },
     { height: 38 },
     { resizeMode: "contain" },
-    (name === "Employee" && { tintColor: "#5a33e8" }) || { tintColor: "gray" },
+    (name === "Home" && { tintColor: "#5a33e8" }) || { tintColor: "gray" },
   ];
   const styleComponentEmployeeText = [
-    (name === "Employee" && { color: "#5a33e8" }) || { color: "gray" },
+    (name === "Home" && { color: "#5a33e8" }) || { color: "gray" },
   ];
 
   const styleComponentOrders = [
@@ -35,7 +35,7 @@ export default function BottomNavBar({ name }) {
     <Block style={{ flex: 0.068, marginTop: 20 }}>
       <Block justifyContent="space-between" direction="row">
         <Block paddingHorizontal={40}>
-          <Button onPress={() => navigation.navigate("Employee")}>
+          <Button onPress={() => navigation.navigate("Home")}>
             <Image
               style={styleComponentEmployee}
               source={require("../assets/group.png")}

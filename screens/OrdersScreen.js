@@ -28,50 +28,12 @@ export default class EmployeeScreen extends React.Component {
     isAddMode: false,
   };
 
-  createTwoButtonAlert = () =>
-    Alert.alert(
-      "Ordem de Entrega criado!\n Pedido nº #10231",
-      "O código do pedido foi enviado para o cliente por SMS",
-      [
-        {
-          text: "Cancel",
-          onPress: () => console.log("Cancel Pressed"),
-          style: "cancel",
-        },
-        { text: "OK", onPress: () => console.log("OK Pressed") },
-      ],
-      { cancelable: false }
-    );
-
-  addGoalHandler(newOrder) {
-    //console.log("new order é:", newOrder);
-    this.setState({
-      ordersList: [
-        ...this.state.ordersList,
-        { id: Math.random().toString(), value: newOrder },
-      ],
-    });
-    console.log(this.state.ordersList);
-
-    this.setState({ isAddMode: false });
-
-    setTimeout(() => {
-      //console.log("user é definido assim:", user);
-      this.createTwoButtonAlert();
-    }, 1000);
-  }
-
-  removeGoalHandler(goalId) {
-    console.log("goalId:", goalId);
+  detailsHandler(goalId) {
     this.setState({
       ordersList: this.state.ordersList.filter((goal) => goal.id !== goalId),
     });
-    console.log("nova lista:", this.state.ordersList);
   }
 
-  cancelHandler() {
-    this.setState({ isAddMode: false });
-  }
   signOutUser = () => {
     firebase.auth().signOut();
   };
@@ -95,30 +57,20 @@ export default class EmployeeScreen extends React.Component {
               ></Block>
               <Block padding={30} style={{ marginTop: 20 }}>
                 <Block direction="row" justifyContent="space-between">
-                  <TextView
-                    h2
-                    color="#291b5c"
-                    style={{ marginLeft: 15 }}
-                    center
-                  >
-                    Pedidos
+                  <TextView h5 color="black" style={{ marginLeft: 5 }} bold>
+                    Meus Pedidos
                   </TextView>
                 </Block>
                 <Block style={{ marginTop: 10 }} justifyContent="space-between">
                   <Block shadow style={styles.container}>
                     <View>
-                      <GoalInput
-                        visible={this.state.isAddMode}
-                        onAddGoal={(order) => this.addGoalHandler(order)}
-                        onCancel={() => this.setState({ isAddMode: false })}
-                      />
                       <FlatList
                         data={this.state.ordersList}
                         renderItem={(itemData) => (
                           <Block style={{ marginTop: 10 }}>
                             <GoalItem
                               id={itemData.item.id}
-                              onDelete={(id) => this.removeGoalHandler(id)}
+                              onExpand={(id) => this.detailsHandler(id)}
                               title={itemData.item.value}
                             />
                           </Block>
@@ -126,23 +78,6 @@ export default class EmployeeScreen extends React.Component {
                       />
                     </View>
                   </Block>
-                </Block>
-                <Block shadow>
-                  <Button
-                    style={styles.addEmployee}
-                    onPress={() => this.setState({ isAddMode: true })}
-                  >
-                    <Block direction="row" centered style={{ padding: 5 }}>
-                      <TextView
-                        style={{ marginLeft: 5, alignSelf: "center" }}
-                        h5
-                        bold
-                        color="#fff"
-                      >
-                        Adicionar Pedido
-                      </TextView>
-                    </Block>
-                  </Button>
                 </Block>
               </Block>
             </Block>
@@ -224,8 +159,8 @@ const styles = StyleSheet.create({
     alignSelf: "center",
     height: 420,
     width: "100%",
-    borderRadius: 25,
-    backgroundColor: "#5a33e8",
+    borderRadius: 5,
+    backgroundColor: "transparent",
     paddingVertical: 10,
   },
   containerText: {
