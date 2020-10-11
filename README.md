@@ -5,7 +5,7 @@
 
 #### Apresentação 
 
-   Observando as dificuldades enfrentadas por empresas do ramo de comércio em fornecer informações de maneira rápida e prática, foi criado o MyCatter, um aplicativo que traz transparência do serviço logístico de entrega aliado à personalização de sua plataforma para uma maior conexão cliente-empresa
+   Observando as dificuldades enfrentadas por empresas do ramo de comércio em fornecer informações de maneira rápida e prática, foi criado o MyCatter, um aplicativo mobile com funcionalidades aplicadas em sistema web que traz transparência do serviço logístico de entrega aliado à personalização de sua plataforma para uma maior conexão cliente-empresa
 
 
 #### O Produto
