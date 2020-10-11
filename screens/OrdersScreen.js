@@ -29,21 +29,21 @@ export default class EmployeeScreen extends React.Component {
         pedido: "123456",
         value: "Caminhão de Mineração",
         status: "Aprovado",
-        step: randomStep()
+        step: randomStep(),
       },
       {
         id: "88",
         pedido: "123456",
         value: "Mini Escavadeira",
         status: "Aprovado",
-        step: randomStep()
+        step: randomStep(),
       },
       {
         id: "99",
         pedido: "123456",
         value: "Carregadeira Pequena",
         status: "Entregue",
-        step: 3
+        step: 3,
       },
     ],
     isAddMode: false,
@@ -76,13 +76,18 @@ export default class EmployeeScreen extends React.Component {
                   top: -290,
                 }}
               ></Block>
-              <Block padding={30} style={{ marginTop: 20 }}>
-                <Block direction="row" justifyContent="space-between">
-                  <TextView h5 color="black" style={{ marginLeft: 5 }} bold>
+              <Block padding={25} style={{ marginTop: 20 }}>
+                <Block direction="row" justifyContent="flex-start">
+                  <TextView
+                    size={30}
+                    color="black"
+                    style={{ marginTop: 15 }}
+                    bold
+                  >
                     Meus Pedidos
                   </TextView>
                 </Block>
-                <Block style={{ marginTop: 10 }} justifyContent="space-between">
+                <Block justifyContent="flex-start">
                   <Block shadow style={styles.container}>
                     <View>
                       <FlatList
@@ -115,14 +120,14 @@ const styles = StyleSheet.create({
   container: {
     marginTop: 20,
     alignSelf: "center",
-    height: 420,
+    height: 450,
     width: "100%",
     borderRadius: 5,
     backgroundColor: "transparent",
     paddingVertical: 10,
   },
   containerText: {
-    marginLeft: 15,
+    marginLeft: 5,
     marginTop: 5,
   },
   addEmployee: {
