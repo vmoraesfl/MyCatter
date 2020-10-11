@@ -20,6 +20,8 @@
 
 #### Informações adicionais 
 
+   Foi implementada uma estrutura de autorização para login no aplicativo com um banco de dados funcional em Firebase, para obter acesso ao resto do aplicativo basta se registrar no botão de registro presente na interface de login. Seus dados de acesso serão gravados no banco de dados de forma criptografada. Esse login quando em produção estaria integrado com o login da empresa contratante.
+   
    Como dito anteriormente, nosso produto se baseia num aplicativo mobile e num sistema web voltado para a visualização 3D dos equipamentos que porventura foram adquiridos. Porém, para que os sistemas cumpram seus objetivos de forma coesa, é importante que as duas aplicações sejam iniciadas simultaneamente. 
 
    Ao iniciar a **aplicação mobile**, para que a visualização 3D seja feita, é essencial que a pasta `3D-visualizations` seja acessada, iniciando o **sistema web** por meio o comando `npm start`. Sendo assim, com os dois sistemas sendo executados, o usuário poderá atingir a experiência que propomos nesse desafio.
