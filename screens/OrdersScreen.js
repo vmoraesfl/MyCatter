@@ -22,8 +22,24 @@ import GoalInput from "../components/OrderInput";
 export default class EmployeeScreen extends React.Component {
   state = {
     ordersList: [
-      { id: "51", value: "Cliente: Ana Delfina" },
-      { id: "88", value: "Cliente: Pedro Paulo" },
+      {
+        id: "51",
+        pedido: "123456",
+        value: "Cliente: Ana Delfina",
+        status: "Pagamento Aprovado",
+      },
+      {
+        id: "88",
+        pedido: "123456",
+        value: "Cliente: Pedro Paulo",
+        status: "Cancelado",
+      },
+      {
+        id: "99",
+        pedido: "123456",
+        value: "Cliente: João Paulo",
+        status: "Entregue",
+      },
     ],
     isAddMode: false,
   };
@@ -72,6 +88,8 @@ export default class EmployeeScreen extends React.Component {
                               id={itemData.item.id}
                               onExpand={(id) => this.detailsHandler(id)}
                               title={itemData.item.value}
+                              status={itemData.item.status}
+                              order={itemData.item.pedido}
                             />
                           </Block>
                         )}

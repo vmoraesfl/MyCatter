@@ -27,7 +27,7 @@ const GoalItem = (props) => {
           <Block style={{ flex: 1 }}>
             <Image
               style={{
-                width: 130,
+                width: 100,
                 height: 90,
               }}
               resizeMode="cover"
@@ -48,10 +48,10 @@ const GoalItem = (props) => {
               {props.title}
             </TextView>
             <TextView style={{ fontSize: 16 }} color={Colors.base_regular}>
-              Pedido nº 21616161
+              Pedido nº {props.order}
             </TextView>
-            <TextView h6 color={Colors.black}>
-              Status Finalizado
+            <TextView style={{ fontSize: 14 }} color={Colors.black}>
+              Status: {props.status}
             </TextView>
           </Block>
           <Block
