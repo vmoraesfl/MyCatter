@@ -70,7 +70,9 @@ function TabNav() {
       })}
       tabBarOptions={{
         activeTintColor: "#F8C210",
-        inactiveTintColor: "#000",
+        inactiveTintColor: "#fff",
+        activeBackgroundColor: "#000",
+        inactiveBackgroundColor: "#000",
       }}
     >
       <Tab.Screen name="Orders" component={OrdersScreen} />
