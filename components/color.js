@@ -15,6 +15,7 @@ const Colors = {
   base_extra_dark: "#291b5c",
   black: "#000",
   white: "#fff",
+  yellow: "#fbc210",
 };
 
 export { Colors };

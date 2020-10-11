@@ -13,7 +13,7 @@ import { Colors } from "../components/color";
 const GoalItem = (props) => {
   const [isAddMode, AddMode] = useState(false);
   return (
-    <Block style={{ paddingHorizontal: 1 }}>
+    <Block style={{ paddingHorizontal: 0 }}>
       <Block
         borderRadius={10}
         style={{
@@ -23,7 +23,6 @@ const GoalItem = (props) => {
         }}
         justifyContent="space-between"
       >
-
         <Block style={{ backgroundColor: "transparent" }} direction="row">
           <Block style={{ flex: 1 }}>
             <Image
@@ -34,7 +33,6 @@ const GoalItem = (props) => {
               resizeMode="cover"
               source={require("../assets/big_truck.jpg")}
             />
-
           </Block>
           <Block
             style={{
@@ -46,16 +44,14 @@ const GoalItem = (props) => {
             direction="column"
             centered
           >
-
             <TextView style={{ fontSize: 16 }} color={Colors.black}>
               {props.title}
             </TextView>
             <TextView style={{ fontSize: 16 }} color={Colors.base_regular}>
               Pedido nº {props.order}
             </TextView>
-            <TextView style={{ fontSize: 14 }} color={Colors.black}>
+            <TextView style={{ fontSize: 15 }} color={Colors.yellow} bold>
               Status: {props.status}
-
             </TextView>
           </Block>
           <Block
@@ -88,14 +84,49 @@ const GoalItem = (props) => {
           </Block>
         </Block>
         {isAddMode && (
-          <Block direction="column">
-            <TextView
-              style={{ fontSize: 16, paddingVertical: 10 }}
-              color={Colors.base_regular}
-            >
-              Emitir Nota Fiscal {"\n"}Realizar Tour Virtual {"\n"}Algum
-              problema? Acesse nosso Chat!
-            </TextView>
+          <Block direction="column" padding={10}>
+            <Button>
+              <Block
+                color="#fbc210"
+                borderRadius={5}
+                margin={10}
+                padding={2}
+                shadow
+              >
+                <Block style={{ width: 300 }} direction="row" middle centered>
+                  <TextView size={14} color="black" bold>
+                    Emitir Nota Fiscal
+                  </TextView>
+                </Block>
+              </Block>
+            </Button>
+            <Button>
+              <Block
+                color="#fbc210"
+                borderRadius={5}
+                margin={10}
+                padding={2}
+                shadow
+              >
+                <Block style={{ width: 300 }} direction="row" middle centered>
+                  <TextView size={14} color="black" bold>
+                    Rastreamento Transporte
+                  </TextView>
+                </Block>
+              </Block>
+            </Button>
+            <Button>
+              <TextView
+                style={{
+                  fontSize: 12,
+                  paddingVertical: 10,
+                  alignSelf: "flex-start",
+                }}
+                color={Colors.base_regular}
+              >
+                Problemas? Entre em Contato!
+              </TextView>
+            </Button>
             <Button onPress={() => AddMode(false)}>
               <Image
                 style={{
