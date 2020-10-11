@@ -100,7 +100,7 @@ const GoalItem = (props) => {
           <Block direction="column" padding={10}>
             <Stepper randomStep={props.step} />
             <Block direction="row" padding={10}>
-              <Button>
+              <Button onPress={() => nfAlert()}>
                 <Block
                   color="#fbc210"
                   borderRadius={5}
