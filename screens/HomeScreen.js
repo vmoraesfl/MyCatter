@@ -122,7 +122,7 @@ export default function HomeScreen({ navigation }) {
         </Button>
       </Block>
       <BottomNavBar name="Home" />
-    </Block>
+    </View>
   );
 }
 
