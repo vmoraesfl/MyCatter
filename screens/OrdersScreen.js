@@ -29,21 +29,21 @@ export default class EmployeeScreen extends React.Component {
         pedido: "123456",
         value: "Caminhão de Mineração",
         status: "Aprovado",
-        step: randomStep()
+        step: randomStep(),
       },
       {
         id: "88",
         pedido: "123456",
         value: "Mini Escavadeira",
         status: "Aprovado",
-        step: randomStep()
+        step: randomStep(),
       },
       {
         id: "99",
         pedido: "123456",
         value: "Carregadeira Pequena",
         status: "Entregue",
-        step: 3
+        step: 3,
       },
     ],
     isAddMode: false,

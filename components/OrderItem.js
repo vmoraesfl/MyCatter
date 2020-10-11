@@ -6,6 +6,7 @@ import {
   TouchableOpacity,
   Image,
   Modal,
+  Alert,
 } from "react-native";
 import { Block, TextView, Button, Input } from "../components";
 import { Colors } from "../components/color";
@@ -13,6 +14,16 @@ import Stepper from "./Stepper";
 
 const GoalItem = (props) => {
   const [isAddMode, AddMode] = useState(false);
+
+  function nfAlert() {
+    Alert.alert(
+      "Nota Fiscal Eletrônica",
+      "A NFe foi enviada para o seu email",
+      [{ text: "OK", onPress: () => {} }],
+      { cancelable: true }
+    );
+  }
+
   return (
     <Block style={{ paddingHorizontal: 0 }}>
       <Block
@@ -86,8 +97,8 @@ const GoalItem = (props) => {
         </Block>
         {isAddMode && (
           <Block direction="column" padding={10}>
-            <Stepper randomStep={props.step}/>
-            <Button>
+            <Stepper randomStep={props.step} />
+            <Button onPress={() => nfAlert()}>
               <Block
                 color="#fbc210"
                 borderRadius={5}

@@ -184,7 +184,7 @@ export default class MapScreen extends React.Component {
                           tintColor: "#fff",
                           alignSelf: "center",
                         }}
-                        source={require("../assets/images/browser.png")}
+                        source={require("../assets/time.png")}
                       ></Image>
                       <TextView
                         bold
@@ -205,7 +205,7 @@ export default class MapScreen extends React.Component {
                           tintColor: "#fff",
                           alignSelf: "center",
                         }}
-                        source={require("../assets/images/location.png")}
+                        source={require("../assets/time.png")}
                       ></Image>
                       <TextView
                         bold
@@ -227,7 +227,7 @@ export default class MapScreen extends React.Component {
                           tintColor: "#fff",
                           alignSelf: "center",
                         }}
-                        source={require("../assets/images/ampulheta.png")}
+                        source={require("../assets/time.png")}
                       ></Image>
                       <TextView
                         bold
@@ -247,7 +247,7 @@ export default class MapScreen extends React.Component {
                           tintColor: "#fff",
                           alignSelf: "center",
                         }}
-                        source={require("../assets/images/heart.png")}
+                        source={require("../assets/time.png")}
                       ></Image>
                       <TextView
                         bold
@@ -359,7 +359,7 @@ export default class MapScreen extends React.Component {
 
                       <MapView.Marker
                         coordinate={this.state.driver}
-                        image={require("../assets/images/robot-dev.png")}
+                        image={require("../assets/time.png")}
                       />
 
                       <MapViewDirections
@@ -402,7 +402,7 @@ export default class MapScreen extends React.Component {
                       marginLeft: -40,
                       marginTop: 2,
                     }}
-                    source={require("../assets/images/chatbox-outline.png")}
+                    source={require("../assets/chatbox-outline.png")}
                   ></Image>
                   <TextView
                     style={{ marginLeft: 20, alignSelf: "center" }}
@@ -434,7 +434,7 @@ export default class MapScreen extends React.Component {
                       marginTop: 1,
                       paddingHorizontal: 10,
                     }}
-                    source={require("../assets/images/logout.png")}
+                    source={require("../assets/logout.png")}
                   ></Image>
                   <TextView
                     h5

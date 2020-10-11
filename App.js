@@ -5,7 +5,7 @@ import { createStackNavigator } from "@react-navigation/stack";
 import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
 import Icon from "react-native-vector-icons/Feather";
 
-import HomeScreen from "./screens/HomeScreen";
+import WebScreen from "./screens/WebScreen";
 //import MapScreen from "./screens/MapScreen";
 import LoginScreen from "./screens/LoginScreen";
 import RegisterScreen from "./screens/RegisterScreen";
@@ -75,7 +75,7 @@ function TabNav() {
     >
       <Tab.Screen name="Orders" component={OrdersScreen} />
       <Tab.Screen name="Chat" component={ChatScreen} />
-      <Tab.Screen name="Website" component={HomeScreen} />
+      <Tab.Screen name="Website" component={WebScreen} />
       <Tab.Screen name="Profile" component={ProfileScreen} />
       <Tab.Screen name="Sair" component={LogoutScreen} />
     </Tab.Navigator>
@@ -86,7 +86,7 @@ function App() {
   return (
     <NavigationContainer>
       <Stack.Navigator initialRouteName="Loading">
-        <Stack.Screen name="Home" component={HomeScreen} />
+        <Stack.Screen name="Web" component={WebScreen} />
         <Stack.Screen
           name="TabNav"
           component={TabNav}
