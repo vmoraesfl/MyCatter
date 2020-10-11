@@ -30,10 +30,9 @@ const fakeUserData = {
   CNPJ: "92.110.118/0001-90",
   stateRegistration: "004/0836100",
   address: "Praça General Tibúrcio, 80, Praia Vermelha, Rio de Janeiro - RJ",
-}
+};
 
 export default class Profile extends Component {
-
   state = {
     email: "",
     displayName: "",
@@ -42,7 +41,7 @@ export default class Profile extends Component {
 
   render() {
     const { displayName, email, phoneNumber } = userData();
-    const { CPF, CNPJ, phone, stateRegistration, address } = fakeUserData
+    const { CPF, CNPJ, phone, stateRegistration, address } = fakeUserData;
     return (
       <ScrollView backgroundColor={"#e6d4ff"} style={{ flex: 1 }}>
         <SafeAreaView>
@@ -58,16 +57,21 @@ export default class Profile extends Component {
                 top: -290,
               }}
             ></Block>
-            <Block padding={30} style={{ marginTop: 50 }}>
+            <Block padding={30} style={{ marginTop: 30 }}>
               <Block>
-                <TextView h1 color="black">
+                <TextView
+                  size={30}
+                  color="black"
+                  style={{ marginTop: 15 }}
+                  bold
+                >
                   Seu Cadastro
                 </TextView>
               </Block>
               <Block>
-                <Block style={{ marginTop: 50 }}>
+                <Block style={{ marginTop: 20 }}>
                   <TextView
-                    size={20}
+                    size={18}
                     style={{ fontWeight: "600" }}
                     color="gray"
                   >
@@ -81,7 +85,7 @@ export default class Profile extends Component {
                     style={{ marginTop: 10, marginLeft: -2 }}
                   >
                     <TextInput
-                      style={{ fontSize: 20 }}
+                      style={{ fontSize: 18 }}
                       placeholder=""
                       value={displayName}
                     />
@@ -90,7 +94,7 @@ export default class Profile extends Component {
 
                 <Block style={{ marginTop: 20 }}>
                   <TextView
-                    size={20}
+                    size={18}
                     style={{ fontWeight: "600" }}
                     color="gray"
                   >
@@ -104,7 +108,7 @@ export default class Profile extends Component {
                     style={{ marginTop: 10, marginLeft: -2 }}
                   >
                     <TextInput
-                      style={{ fontSize: 20 }}
+                      style={{ fontSize: 18 }}
                       placeholder=""
                       value={email}
                     />
@@ -112,7 +116,7 @@ export default class Profile extends Component {
                 </Block>
                 <Block style={{ marginTop: 20 }}>
                   <TextView
-                    size={20}
+                    size={18}
                     style={{ fontWeight: "600" }}
                     color="gray"
                   >
@@ -127,7 +131,7 @@ export default class Profile extends Component {
                     style={{ marginTop: 10, marginLeft: -2 }}
                   >
                     <TextInput
-                      style={{ fontSize: 20 }}
+                      style={{ fontSize: 18 }}
                       placeholder=""
                       autoCapitalize="none"
                       value={phone}
@@ -136,7 +140,7 @@ export default class Profile extends Component {
                 </Block>
                 <Block style={{ marginTop: 20 }}>
                   <TextView
-                    size={20}
+                    size={18}
                     style={{ fontWeight: "600" }}
                     color="gray"
                   >
@@ -151,7 +155,7 @@ export default class Profile extends Component {
                     style={{ marginTop: 10, marginLeft: -2 }}
                   >
                     <TextInput
-                      style={{ fontSize: 20 }}
+                      style={{ fontSize: 18 }}
                       placeholder=""
                       autoCapitalize="none"
                       value={CPF}
@@ -160,7 +164,7 @@ export default class Profile extends Component {
                 </Block>
                 <Block style={{ marginTop: 20 }}>
                   <TextView
-                    size={20}
+                    size={18}
                     style={{ fontWeight: "600" }}
                     color="gray"
                   >
@@ -175,7 +179,7 @@ export default class Profile extends Component {
                     style={{ marginTop: 10, marginLeft: -2 }}
                   >
                     <TextInput
-                      style={{ fontSize: 20 }}
+                      style={{ fontSize: 18 }}
                       placeholder=""
                       autoCapitalize="none"
                       value={CNPJ}
@@ -184,7 +188,7 @@ export default class Profile extends Component {
                 </Block>
                 <Block style={{ marginTop: 20 }}>
                   <TextView
-                    size={20}
+                    size={18}
                     style={{ fontWeight: "600" }}
                     color="gray"
                   >
@@ -199,7 +203,7 @@ export default class Profile extends Component {
                     style={{ marginTop: 10, marginLeft: -2 }}
                   >
                     <TextInput
-                      style={{ fontSize: 20 }}
+                      style={{ fontSize: 18 }}
                       placeholder=""
                       autoCapitalize="none"
                       value={stateRegistration}
@@ -208,7 +212,7 @@ export default class Profile extends Component {
                 </Block>
                 <Block style={{ marginTop: 20 }}>
                   <TextView
-                    size={20}
+                    size={18}
                     style={{ fontWeight: "600" }}
                     color="gray"
                   >
@@ -223,7 +227,7 @@ export default class Profile extends Component {
                     style={{ marginTop: 10, marginLeft: -2 }}
                   >
                     <TextInput
-                      style={{ fontSize: 20 }}
+                      style={{ fontSize: 18 }}
                       placeholder=""
                       autoCapitalize="none"
                       value={address}
@@ -237,18 +241,16 @@ export default class Profile extends Component {
                       color="#fbc210"
                       borderRadius={20}
                       padding={15}
+                      style={{ marginTop: 10, marginLeft: 10, marginRight: 10 }}
                       shadow
                     >
-                      <Block
-                        style={{ width: 200 }}
-                        direction="row"
-                        paddingHorizontal={50}
-                        middle
-                        centered
-                      >
+                      <Block direction="row" paddingHorizontal={15} centered>
                         <TextView
-                          size={25}
-                          style={{ fontWeight: "500" }}
+                          size={20}
+                          styleComponent={{
+                            fontWeight: "10",
+                            alignSelf: "center",
+                          }}
                           color="black"
                           bold
                         >

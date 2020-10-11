@@ -11,6 +11,7 @@ import {
 import { Block, TextView, Button, Input } from "../components";
 import { Colors } from "../components/color";
 import Stepper from "./Stepper";
+import openMap from "react-native-open-maps";
 
 const GoalItem = (props) => {
   const [isAddMode, AddMode] = useState(false);
@@ -98,36 +99,91 @@ const GoalItem = (props) => {
         {isAddMode && (
           <Block direction="column" padding={10}>
             <Stepper randomStep={props.step} />
-            <Button onPress={() => nfAlert()}>
-              <Block
-                color="#fbc210"
-                borderRadius={5}
-                margin={10}
-                padding={2}
-                shadow
-              >
-                <Block style={{ width: 300 }} direction="row" middle centered>
-                  <TextView size={14} color="black" bold>
-                    Emitir Nota Fiscal
-                  </TextView>
+            <Block direction="row" padding={10}>
+              <Button>
+                <Block
+                  color="#fbc210"
+                  borderRadius={5}
+                  margin={2}
+                  marginLeft={-3}
+                  padding={5}
+                  shadow
+                >
+                  <Block
+                    style={{ width: 65 }}
+                    direction="column"
+                    middle
+                    centered
+                  >
+                    <TextView textAlign="center" size={12} color="black" bold>
+                      Emitir {"\n"}Nota Fiscal
+                    </TextView>
+                  </Block>
                 </Block>
-              </Block>
-            </Button>
-            <Button>
-              <Block
-                color="#fbc210"
-                borderRadius={5}
-                margin={10}
-                padding={2}
-                shadow
+              </Button>
+              <Button
+                onPress={() => openMap({ ...props.coordinates, zoom: 12 })}
               >
-                <Block style={{ width: 300 }} direction="row" middle centered>
-                  <TextView size={14} color="black" bold>
-                    Rastreamento Transporte
-                  </TextView>
+                <Block
+                  color="#fbc210"
+                  borderRadius={5}
+                  margin={2}
+                  padding={5}
+                  shadow
+                >
+                  <Block
+                    style={{ width: 65 }}
+                    direction="column"
+                    middle
+                    centered
+                  >
+                    <TextView alignItems="center" size={12} color="black" bold>
+                      Rastrear Transporte
+                    </TextView>
+                  </Block>
                 </Block>
-              </Block>
-            </Button>
+              </Button>
+              <Button>
+                <Block
+                  color="#fbc210"
+                  borderRadius={5}
+                  margin={2}
+                  padding={5}
+                  shadow
+                >
+                  <Block
+                    style={{ width: 65 }}
+                    direction="column"
+                    middle
+                    centered
+                  >
+                    <TextView textAlign="center" size={12} color="black" bold>
+                      Agendar Visita
+                    </TextView>
+                  </Block>
+                </Block>
+              </Button>
+              <Button>
+                <Block
+                  color="#fbc210"
+                  borderRadius={5}
+                  margin={2}
+                  padding={5}
+                  shadow
+                >
+                  <Block
+                    style={{ width: 65 }}
+                    direction="column"
+                    middle
+                    centered
+                  >
+                    <TextView size={12} color="black" bold>
+                      Visita Virtual
+                    </TextView>
+                  </Block>
+                </Block>
+              </Button>
+            </Block>
             <Button>
               <TextView
                 style={{

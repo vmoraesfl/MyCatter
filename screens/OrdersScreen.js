@@ -20,6 +20,8 @@ import GoalItem from "../components/OrderItem";
 import GoalInput from "../components/OrderInput";
 
 const randomStep = () => Math.floor(Math.random() * 3);
+const randomLat = () => (Math.random() * 28.48 - 33.75).toFixed(3) * 1;
+const randomLong = () => (Math.random() * 39 - 74).toFixed(3) * 1;
 
 export default class EmployeeScreen extends React.Component {
   state = {
@@ -31,6 +33,10 @@ export default class EmployeeScreen extends React.Component {
         status: "Aprovado",
         step: randomStep(),
         image: "big_truck",
+        coordinates: {
+          latitude: randomLat(),
+          longitude: randomLong(),
+        },
       },
       {
         id: "88",
@@ -39,6 +45,10 @@ export default class EmployeeScreen extends React.Component {
         status: "Aprovado",
         step: randomStep(),
         image: "mini_escavadeira",
+        coordinates: {
+          latitude: randomLat(),
+          longitude: randomLong(),
+        },
       },
       {
         id: "99",
@@ -47,6 +57,10 @@ export default class EmployeeScreen extends React.Component {
         status: "Entregue",
         step: 3,
         image: "carregadeira",
+        coordinates: {
+          latitude: randomLat(),
+          longitude: randomLong(),
+        },
       },
     ],
     isAddMode: false,
@@ -79,13 +93,18 @@ export default class EmployeeScreen extends React.Component {
                   top: -290,
                 }}
               ></Block>
-              <Block padding={30} style={{ marginTop: 20 }}>
-                <Block direction="row" justifyContent="space-between">
-                  <TextView h5 color="black" style={{ marginLeft: 5 }} bold>
+              <Block padding={25} style={{ marginTop: 20 }}>
+                <Block direction="row" justifyContent="flex-start">
+                  <TextView
+                    size={30}
+                    color="black"
+                    style={{ marginTop: 15 }}
+                    bold
+                  >
                     Meus Pedidos
                   </TextView>
                 </Block>
-                <Block style={{ marginTop: 10 }} justifyContent="space-between">
+                <Block justifyContent="flex-start">
                   <Block shadow style={styles.container}>
                     <View>
                       <FlatList
@@ -100,6 +119,7 @@ export default class EmployeeScreen extends React.Component {
                               order={itemData.item.pedido}
                               step={itemData.item.step}
                               image={itemData.item.image}
+                              coordinates={itemData.item.coordinates}
                             />
                           </Block>
                         )}
@@ -126,7 +146,7 @@ const styles = StyleSheet.create({
     paddingVertical: 10,
   },
   containerText: {
-    marginLeft: 15,
+    marginLeft: 5,
     marginTop: 5,
   },
   addEmployee: {

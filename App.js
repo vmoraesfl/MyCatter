@@ -96,7 +96,6 @@ function App() {
             headerLeft: null,
           }}
         />
-
         <Stack.Screen
           name="Register"
           component={RegisterScreen}
@@ -125,30 +124,12 @@ function App() {
           }}
         /> */}
         <Stack.Screen
-          name="Orders"
-          component={OrdersScreen}
-          options={{
-            headerShown: false,
-            headerTransparent: true,
-            headerLeft: null,
-          }}
-        />
-        <Stack.Screen
           name="Login"
           component={LoginScreen}
           options={{
             headerShown: true,
             headerTransparent: true,
             headerTitle: "",
-            headerLeft: null,
-          }}
-        />
-        <Stack.Screen
-          name="Chat"
-          component={ChatScreen}
-          options={{
-            headerShown: true,
-            headerTitle: "Fale com a gente",
             headerLeft: null,
           }}
         />
