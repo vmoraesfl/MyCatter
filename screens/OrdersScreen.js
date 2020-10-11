@@ -30,6 +30,7 @@ export default class EmployeeScreen extends React.Component {
         value: "Caminhão de Mineração",
         status: "Aprovado",
         step: randomStep(),
+        image: "big_truck",
       },
       {
         id: "88",
@@ -37,6 +38,7 @@ export default class EmployeeScreen extends React.Component {
         value: "Mini Escavadeira",
         status: "Aprovado",
         step: randomStep(),
+        image: "mini_escavadeira",
       },
       {
         id: "99",
@@ -44,6 +46,7 @@ export default class EmployeeScreen extends React.Component {
         value: "Carregadeira Pequena",
         status: "Entregue",
         step: 3,
+        image: "carregadeira",
       },
     ],
     isAddMode: false,
@@ -96,6 +99,7 @@ export default class EmployeeScreen extends React.Component {
                               status={itemData.item.status}
                               order={itemData.item.pedido}
                               step={itemData.item.step}
+                              image={itemData.item.image}
                             />
                           </Block>
                         )}
@@ -115,7 +119,7 @@ const styles = StyleSheet.create({
   container: {
     marginTop: 20,
     alignSelf: "center",
-    height: 420,
+    height: 700,
     width: "100%",
     borderRadius: 5,
     backgroundColor: "transparent",
