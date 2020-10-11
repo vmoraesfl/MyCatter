@@ -53,7 +53,7 @@ export default class RegisterScreen extends React.Component {
             <Block padding={30} style={{ marginTop: 50 }}>
               <Button
                 style={styles.back}
-                onPress={() => this.props.navigation.navigate("LoginUser")}
+                onPress={() => this.props.navigation.navigate("Login")}
               >
                 <Ionicons
                   name="ios-arrow-round-back"
