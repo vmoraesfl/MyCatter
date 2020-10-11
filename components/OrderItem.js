@@ -1,43 +1,104 @@
-import React from "react";
-import { View, Text, StyleSheet, TouchableOpacity, Image } from "react-native";
+import React, { useState, useEffect } from "react";
+import {
+  View,
+  Text,
+  StyleSheet,
+  TouchableOpacity,
+  Image,
+  Modal,
+} from "react-native";
 import { Block, TextView, Button, Input } from "../components";
 import { Colors } from "../components/color";
 const GoalItem = (props) => {
+  const [isAddMode, AddMode] = useState(false);
   return (
     <Block style={{ paddingHorizontal: 5 }}>
       <Block
         borderRadius={20}
         style={{ padding: 20, backgroundColor: "white" }}
-        direction="row"
         justifyContent="space-between"
       >
-        <Block direction="row">
-          <Image
-            style={{ width: 20, height: 20, tintColor: Colors.base_dark }}
-            source={require("../assets/time.png")}
-          ></Image>
-          <Block style={{ marginLeft: 10 }} centered>
+        <Block style={{ backgroundColor: "gray" }} direction="row">
+          <Block style={{ flex: 1 }}>
+            <Image
+              style={{
+                width: 70,
+                height: 70,
+                tintColor: Colors.base_dark,
+                alignSelf: "flex-start",
+                zIndex: 20,
+              }}
+              source={require("../assets/big_truck.jpg")}
+            />
+          </Block>
+          <Block
+            style={{
+              backgroundColor: "tomato",
+              alignItems: "center",
+              justifyContent: "space-between",
+            }}
+            justifyContent="space-between"
+            direction="column"
+            centered
+          >
             <TextView h6 color={Colors.base_extra_dark}>
               {props.title}
             </TextView>
+            <TextView h6 color={Colors.base_extra_dark}>
+              Pedido nº 21616161
+            </TextView>
+            <TextView h6 color={Colors.base_extra_dark}>
+              Status Finalizado
+            </TextView>
+          </Block>
+          <Block
+            style={{
+              marginBottom: 0,
+              marginRight: 0,
+              backgroundColor: "black",
+              alignItems: "flex-end",
+              justifyContent: "flex-end",
+              zIndex: 20,
+            }}
+          >
+            <Button
+              style={{
+                backgroundColor: "purple",
+                zIndex: 20,
+              }}
+              onPress={() => AddMode(true)}
+            >
+              <Image
+                style={{
+                  width: 20,
+                  height: 20,
+
+                  tintColor: Colors.base_dark,
+                  alignSelf: "flex-end",
+                }}
+                source={require("../assets/more.png")}
+              />
+            </Button>
           </Block>
         </Block>
-        <Button onPress={() => props.onDelete(props.id)}>
-          <Image
-            style={{ width: 20, height: 20, tintColor: Colors.base_dark }}
-            source={require("../assets/close.png")}
-          ></Image>
-        </Button>
+        {isAddMode && (
+          <Block direction="column">
+            <Text>Exxxxxxxxxxxxxxpandiu!!</Text>
+            <Button onPress={() => AddMode(false)}>
+              <Image
+                style={{
+                  width: 20,
+                  height: 20,
+                  tintColor: Colors.base_dark,
+                  alignSelf: "flex-end",
+                }}
+                source={require("../assets/close.png")}
+              ></Image>
+            </Button>
+          </Block>
+        )}
       </Block>
     </Block>
-    /* <TouchableOpacity
-      activeOpacity={0.8}
-      onPress={() => props.onDelete(props.id)}
-    >
-      <View style={styles.goalContainer}>
-        <Text color={"purple"}>{props.title}</Text>
-      </View>
-    </TouchableOpacity> */
   );
 };
 const styles = StyleSheet.create({

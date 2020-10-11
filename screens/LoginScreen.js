@@ -6,6 +6,7 @@ import {
   Image,
   TextInput,
   SafeAreaView,
+  Alert,
 } from "react-native";
 
 import { ScrollView, TouchableOpacity } from "react-native-gesture-handler";
@@ -39,6 +40,14 @@ export default class LogingScreen extends React.Component {
       .signInWithEmailAndPassword(email, password)
       .catch((error) => this.setState({ errorMessage: error.message }));
   };
+
+  createTwoButtonAlert = () =>
+    Alert.alert(
+      "Recuperação de Senha",
+      "Um link foi enviado para o seu email",
+      [{ text: "OK", onPress: () => {} }],
+      { cancelable: true }
+    );
 
   render() {
     return (
@@ -184,7 +193,7 @@ export default class LogingScreen extends React.Component {
                 </Button>
               </Block>
               <Block style={{ marginTop: 10 }}>
-                <Button>
+                <Button onPress={() => this.createTwoButtonAlert()}>
                   <TextView
                     size={18}
                     style={{ fontWeight: "500" }}

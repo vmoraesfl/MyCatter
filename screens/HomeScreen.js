@@ -1,15 +1,24 @@
-import * as React from "react";
+import React, { useState, useEffect } from "react";
 import { StyleSheet, View, Text, Image } from "react-native";
 
 import { Block, TextView, Button, Input } from "../components";
 import { Colors } from "../components/color";
+import BottomNavBar from "../components/BottomNavBar";
+
+import GoalItem from "../components/OrderItem";
+import GoalInput from "../components/OrderInput";
 
 import * as firebase from "firebase";
 
 export default function HomeScreen({ navigation }) {
+  const [isAddMode, AddMode] = useState(false);
+
+  function addGoalHandler(newOrder) {}
+
   return (
-    <View style={{ flex: 1, alignItems: "center", justifyContent: "center" }}>
+    <Block style={{ flex: 1, alignItems: "center", justifyContent: "center" }}>
       <Text>Lista de Pedidos</Text>
+
       <Button style={styles.chat} onPress={() => navigation.navigate("Chat")}>
         <Block>
           <Block direction="row">
@@ -93,7 +102,22 @@ export default function HomeScreen({ navigation }) {
           </Block>
         </Block>
       </Button>
-    </View>
+      <Block shadow>
+        <Button style={styles.addEmployee} onPress={() => {}}>
+          <Block direction="row" centered style={{ padding: 5 }}>
+            <TextView
+              style={{ marginLeft: 5, alignSelf: "center" }}
+              h5
+              bold
+              color="#fff"
+            >
+              Adicionar Pedido
+            </TextView>
+          </Block>
+        </Button>
+      </Block>
+      <BottomNavBar name="Home" />
+    </Block>
   );
 }
 
@@ -112,5 +136,11 @@ const styles = StyleSheet.create({
     paddingHorizontal: 60,
     shadowColor: "gray",
     shadowOpacity: 1,
+  },
+  addEmployee: {
+    marginTop: 40,
+    padding: 15,
+    borderRadius: 25,
+    backgroundColor: "#5a33e8",
   },
 });
