@@ -13,7 +13,7 @@ export default class LoadingScreen extends React.Component {
       setTimeout(() => {
         //console.log("user é definido assim:", user);
         this.props.navigation.navigate(
-          !user || user.isAnonymous ? "Login" : "Home"
+          !user || user.isAnonymous ? "Login" : "TabNav"
         );
       }, 1200);
     });

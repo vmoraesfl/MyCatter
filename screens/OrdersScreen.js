@@ -148,7 +148,6 @@ export default class EmployeeScreen extends React.Component {
             </Block>
           </SafeAreaView>
         </ScrollView>
-        <BottomNavBar name="Orders" />
       </Block>
     );
   }
