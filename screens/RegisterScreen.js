@@ -50,7 +50,7 @@ export default class RegisterScreen extends React.Component {
                 top: -290,
               }}
             ></Block>
-            <Block padding={30} style={{ marginTop: 50 }}>
+            <Block padding={30} style={{ marginTop: 70 }}>
               <Button
                 style={styles.back}
                 onPress={() => this.props.navigation.navigate("Login")}
@@ -62,14 +62,19 @@ export default class RegisterScreen extends React.Component {
                 ></Ionicons>
               </Button>
               <Block>
-                <TextView h1 color="black">
-                  Registre se
+                <TextView
+                  size={30}
+                  color="black"
+                  style={{ marginTop: 15 }}
+                  bold
+                >
+                  Registre-se
                 </TextView>
               </Block>
               <Block>
-                <Block style={{ marginTop: 50 }}>
+                <Block style={{ marginTop: 20 }}>
                   <TextView
-                    size={20}
+                    size={16}
                     style={{ fontWeight: "600" }}
                     color="gray"
                   >
@@ -83,7 +88,7 @@ export default class RegisterScreen extends React.Component {
                     style={{ marginTop: 10, marginLeft: -2 }}
                   >
                     <TextInput
-                      style={{ fontSize: 20 }}
+                      style={{ fontSize: 18 }}
                       placeholder="João da Silva"
                       onChangeText={(name) => this.setState({ name })}
                       value={this.state.name}
@@ -93,7 +98,7 @@ export default class RegisterScreen extends React.Component {
 
                 <Block style={{ marginTop: 20 }}>
                   <TextView
-                    size={20}
+                    size={16}
                     style={{ fontWeight: "600" }}
                     color="gray"
                   >
@@ -107,7 +112,7 @@ export default class RegisterScreen extends React.Component {
                     style={{ marginTop: 10, marginLeft: -2 }}
                   >
                     <TextInput
-                      style={{ fontSize: 20 }}
+                      style={{ fontSize: 18 }}
                       placeholder="exemplo@provedor.com"
                       onChangeText={(email) => this.setState({ email })}
                       value={this.state.email}
@@ -116,7 +121,7 @@ export default class RegisterScreen extends React.Component {
                 </Block>
                 <Block style={{ marginTop: 20 }}>
                   <TextView
-                    size={20}
+                    size={16}
                     style={{ fontWeight: "600" }}
                     color="gray"
                   >
@@ -131,7 +136,7 @@ export default class RegisterScreen extends React.Component {
                     style={{ marginTop: 10, marginLeft: -2 }}
                   >
                     <TextInput
-                      style={{ fontSize: 20 }}
+                      style={{ fontSize: 18 }}
                       placeholder="Digite a sua senha"
                       secureTextEntry
                       autoCapitalize="none"
@@ -146,39 +151,41 @@ export default class RegisterScreen extends React.Component {
                   </TextView>
                 </Block>
 
-                <Block style={{ marginTop: 10, alignSelf: "center" }}>
+                <Block style={{ marginTop: 0, alignSelf: "center" }}>
                   <Button onPress={this.handleSignup}>
                     <Block
                       color="#fbc210"
                       borderRadius={20}
                       padding={15}
+                      style={{ marginTop: 10, marginLeft: 10, marginRight: 10 }}
                       shadow
                     >
-                      <Block
-                        style={{ width: 200 }}
-                        direction="row"
-                        paddingHorizontal={50}
-                        middle
-                        centered
-                      >
+                      <Block direction="row" paddingHorizontal={15} centered>
                         <TextView
-                          size={25}
-                          style={{ fontWeight: "500" }}
+                          size={20}
+                          styleComponent={{
+                            fontWeight: "10",
+                            alignSelf: "center",
+                          }}
                           color="black"
                           bold
                         >
-                          Enter
+                          Sign Up
                         </TextView>
                       </Block>
                     </Block>
                   </Button>
                 </Block>
-                <Block direction="row" style={{ marginTop: 40 }}>
-                  <TextView size={18}>Já possui uma conta? </TextView>
+                <Block
+                  direction="row"
+                  justifyContent="center"
+                  style={{ marginTop: 40 }}
+                >
+                  <TextView size={16}>Já possui uma conta? </TextView>
                   <Button
                     onPress={() => this.props.navigation.navigate("Login")}
                   >
-                    <TextView size={18} style color="#5a33e8">
+                    <TextView size={16} color="#fbc210" bold>
                       Log in
                     </TextView>
                   </Button>
