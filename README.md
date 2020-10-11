@@ -15,7 +15,7 @@ Adicione detalhes sobre seu produto. Levante pontos positivos, o porquê dele se
 
 Como dito anteriormente, nosso produto se baseia num aplicativo mobile e num sistema web voltado para a visualização 3D dos equipamentos que porventura foram adquiridos. Porém, para que os sistemas cumpram seus objetivos de forma coesa, é importante que as duas aplicações sejam iniciadas simultaneamente. 
 
-Ao iniciar a **aplicação mobile**, para que a visualização 3D seja feita, é essencial que a pasta `3D-visualizations` seja acessada, iniciando o **sistema web** por meio o comando ´npm start´. Sendo assim, com os dois sistemas sendo executados, o usuário poderá atingir a experiência que propomos nesse desafio.
+Ao iniciar a **aplicação mobile**, para que a visualização 3D seja feita, é essencial que a pasta `3D-visualizations` seja acessada, iniciando o **sistema web** por meio o comando `npm start`. Sendo assim, com os dois sistemas sendo executados, o usuário poderá atingir a experiência que propomos nesse desafio.
 
 ----------PODE APAGAR QUALQUER COISA DEPOIS DAQUI. SÓ DEEM UMA LIDA PRA NAO REPETIREM COISA E LINKAREM DIREITINHO-------
 
